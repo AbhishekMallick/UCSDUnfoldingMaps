@@ -1,12 +1,13 @@
 package module1;
 
-import processing.core.PApplet;
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.providers.AbstractMapProvider;
-import de.fhpotsdam.unfolding.providers.Google;
 import de.fhpotsdam.unfolding.providers.MBTilesMapProvider;
+import de.fhpotsdam.unfolding.providers.Microsoft;
 import de.fhpotsdam.unfolding.utils.MapUtils;
+import processing.core.PApplet;
+
 
 /** HelloWorld
   * An application with two maps side-by-side zoomed in on different locations.
@@ -27,7 +28,7 @@ public class HelloWorld extends PApplet
 	public static String mbTilesString = "blankLight-1-3.mbtiles";
 	
 	// IF YOU ARE WORKING OFFLINE: Change the value of this variable to true
-	private static final boolean offline = true;
+	private static final boolean offline = false;
 	
 	/** The map we use to display our home town: La Jolla, CA */
 	UnfoldingMap map1;
@@ -46,7 +47,7 @@ public class HelloWorld extends PApplet
 		this.background(200, 200, 200);
 		
 		// Select a map provider
-		AbstractMapProvider provider = new Google.GoogleTerrainProvider();
+		AbstractMapProvider provider = new Microsoft.AerialProvider();
 		// Set a zoom level
 		int zoomLevel = 10;
 		
